@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It’s over 9000</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, select {
+      padding: 5px 10px;
+      margin: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Calculator</h1>
+
+  <input type="text" id="left">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="text" id="right">
+  <input type="submit" value="Try me!" onclick="calculate()">
+
+  <script>
+    function isPositiveInteger(value) {
+      const num = Number(value);
+      return Number.isInteger(num) && num >= 0;
+    }
+
+    function calculate() {
+      const left = document.getElementById("left").value;
+      const right = document.getElementById("right").value;
+      const operator = document.getElementById("operator").value;
+
+      if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
+        alert("Error :(");
+        return;
+      }
+
+      const numLeft = Number(left);
+      const numRight = Number(right);
+
+      if ((operator === "/" || operator === "%") && numRight === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      let result;
+      switch (operator) {
+        case "+": result = numLeft + numRight; break;
+        case "-": result = numLeft - numRight; break;
+        case "*": result = numLeft * numRight; break;
+        case "/": result = numLeft / numRight; break;
+        case "%": result = numLeft % numRight; break;
+      }
+
+      alert("Result: " + result);
+      console.log("Result:", result);
+    }
+
+    // Every 30 seconds
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+
+</body>
+</html>
