@@ -1,0 +1,63 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+  padding: 2rem;
+}
+
+/* Main menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  background-color: #8b0000; /* deep red, like SNCF */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu > ul > li {
+  position: relative;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #8b0000;
+  transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background-color: #b22222;
+}
+
+/* Dropdown part */
+.menu .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #b22222;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  border-radius: 0 0 6px 6px;
+  z-index: 100;
+}
+
+.menu .dropdown li a {
+  padding: 0.75rem 1rem;
+  color: #fff;
+}
+
+.menu li:hover .dropdown {
+  display: block;
+}
+
+.menu .dropdown li a:hover {
+  background-color: #dc143c;
+}
