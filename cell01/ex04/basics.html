@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: pink;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      background: #fff0f6;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d6336c;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+      font-size: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 8px #d6336c;
+    }
+    .shop-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .shop {
+      text-align: center;
+      width: 220px;
+    }
+    .shop img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(214,51,108,0.15);
+      background: #fff;
+    }
+    .shop a {
+      display: block;
+      margin-top: 0.5rem;
+      color: #d6336c;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .shop a:hover {
+      color: #a61e4d;
+      text-decoration: underline;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #fff;
+      margin: 2rem 0 1rem 0;
+    }
+    .copyright {
+      text-align: right;
+      font-style: italic;
+      font-family: 'Fira Mono', 'Consolas', monospace;
+      color: #fff;
+      margin: 0 2rem 1rem 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>Basics</nav>
+  <h1>Welcome to PinkShop! 💖</h1>
+  <div class="shop-container">
+    <div class="shop">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?auto=format&fit=crop&w=400&q=80" alt="Shop 1">
+      <a href="https://www.amazon.com/" target="_blank">Visit Amazon</a>
+    </div>
+    <div class="shop">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Shop 2">
+      <a href="https://www.etsy.com/" target="_blank">Visit Etsy</a>
+    </div>
+  </div>
+  <hr>
+  <div class="copyright">
+    &copy; yourlogin 2025
+  </div>
+</body>
+</html>
