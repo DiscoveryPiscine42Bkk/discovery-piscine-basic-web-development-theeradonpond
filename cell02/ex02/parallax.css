@@ -1,0 +1,44 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Parallax section */
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.bg1 {
+  background-image: url('https://www.posterwallprints.com/cdn/shop/files/catinfire.jpg?v=1747041341'); /* เปลี่ยนตามชื่อไฟล์จริง */
+}
+
+.bg2 {
+  background-image: url('https://www.posterwallprints.com/cdn/shop/files/catinfire.jpg?v=1747041341'); /* เปลี่ยนตามชื่อไฟล์จริง */
+}
+
+/* Black content section */
+.content {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
