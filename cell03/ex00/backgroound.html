@@ -6,18 +6,8 @@
   <link rel="stylesheet" href="backgroound.css">
 </head>
 <body>
-  <div class="box" id="color-box">
-    <button onclick="changeBackground()">Click me!</button>
-  </div>
+  <button id="changeBtn">Change Background</button>
 
-  <script>
-    const colors = ["#ffffff", "#226644", "#550019"]; // เริ่มจากขาว > เขียว > ม่วงเข้ม
-    let index = 0;
-
-    function changeBackground() {
-      index = (index + 1) % colors.length;
-      document.getElementById("color-box").style.backgroundColor = colors[index];
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
