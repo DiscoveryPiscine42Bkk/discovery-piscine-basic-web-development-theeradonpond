@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculator (jQuery)</title>
+  <style>
+    input, select {
+      font-size: 18px;
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="calc.js"></script>
+</head>
+<body>
+  <input type="text" id="left" placeholder="Left number" />
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="text" id="right" placeholder="Right number" />
+  <input type="submit" id="tryme" value="Try me!" />
+</body>
+</html>
