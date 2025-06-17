@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>To Do List</title>
+  <meta charset="UTF-8">
+  <title>To Do or Not To Do</title>
   <style>
     body {
       font-family: sans-serif;
-      padding: 20px;
-      background: #f4f4f4;
-    }
-    #new {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-bottom: 10px;
+      padding: 30px;
+      text-align: center;
     }
     #ft_list {
-      border: 2px solid #ccc;
-      padding: 10px;
-      background: white;
-      min-height: 100px;
+      margin-top: 20px;
     }
     .todo {
-      background: #e6f7ff;
-      margin: 5px 0;
+      background-color: #ffd;
+      border: 1px solid #ccc;
       padding: 10px;
+      margin: 5px auto;
+      width: 300px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <button id="new">New</button>
+
+  <button onclick="addTodo()">New</button>
   <div id="ft_list"></div>
 
   <script src="todo.js"></script>
 </body>
 </html>
-

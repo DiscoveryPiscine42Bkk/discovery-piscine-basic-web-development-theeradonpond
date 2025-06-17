@@ -1,53 +1,50 @@
-const ftList = document.getElementById("ft_list");
-const newBtn = document.getElementById("new");
+let todos = [];
 
-// โหลดจาก cookie ตอนเริ่ม
 window.onload = function () {
-  const data = getCookie("todo_list");
-  if (data) {
-    const todos = JSON.parse(data);
-    todos.forEach(text => addTodo(text));
+  // โหลด TODO จาก cookie ถ้ามี
+  const saved = getCookie("todos");
+  if (saved) {
+    todos = JSON.parse(saved);
+    todos.forEach((text) => createTodoElement(text));
   }
 };
 
-// ปุ่มสร้างใหม่
-newBtn.onclick = function () {
-  const text = prompt("Enter a new to-do:");
+function addTodo() {
+  const text = prompt("Enter a new TO DO:");
   if (text && text.trim() !== "") {
-    addTodo(text.trim());
+    todos.unshift(text); // เพิ่มไปที่ต้น array
     saveTodos();
+    createTodoElement(text, true); // เพิ่ม DOM
   }
-};
+}
 
-// สร้างและเพิ่ม TODO ใหม่ด้านบน
-function addTodo(text) {
+function createTodoElement(text, prepend = false) {
   const div = document.createElement("div");
   div.className = "todo";
   div.innerText = text;
+
   div.onclick = function () {
-    if (confirm("Do you want to delete this to-do?")) {
+    if (confirm("Do you want to delete this TO DO?")) {
       div.remove();
+      todos = todos.filter(t => t !== text); // ลบออกจาก array
       saveTodos();
     }
   };
-  ftList.insertBefore(div, ftList.firstChild);
-}
 
-// บันทึก TODO ทั้งหมดลง cookie
-function saveTodos() {
-  const todos = [];
-  const items = ftList.querySelectorAll(".todo");
-  items.forEach(item => todos.push(item.innerText));
-  document.cookie = "todo_list=" + JSON.stringify(todos) + ";path=/;max-age=31536000";
-}
-
-// ดึงค่าจาก cookie
-function getCookie(name) {
-  const cookies = document.cookie.split(';');
-  for (let cookie of cookies) {
-    const [key, val] = cookie.trim().split('=');
-    if (key === name) return decodeURIComponent(val);
+  const list = document.getElementById("ft_list");
+  if (prepend) {
+    list.insertBefore(div, list.firstChild);
+  } else {
+    list.appendChild(div);
   }
-  return null;
 }
 
+function saveTodos() {
+  document.cookie = "todos=" + JSON.stringify(todos) + ";path=/";
+}
+
+function getCookie(name) {
+  const value = "; " + document.cookie;
+  const parts = value.split("; " + name + "=");
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
